@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="w3l-banner-saas py-5" id="work">
+    <div class="banner-content text-center">
+        <h3 class="title-toobig">We love to hear from you.</h3>
+    </div>
+    <!-- <div class="midd-w3 py-lg-5 py-md-2"> -->
+        
+        <div class="container py-lg-0">
+            
+            <div class="container my-3">
+                
+                <form action="/contact" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="phone" class="form-control contact-input" id="phone" name='phone'
+                            placeholder="Enter Your Phone Number">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="desc">How May We Help You?</label>
+                        <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
+
+            </div>
+
+        </div>
+    <!-- </div> -->
+</section>
+
+{% endblock body %}

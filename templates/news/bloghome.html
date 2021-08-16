@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock css %}
+
+{% block js %}
+
+
+
+
+{% endblock js %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% block body %}
+
+<section class="w3l-banner-saas py-5" id="work">
+    <!-- <div class="midd-w3 py-lg-5 py-md-4"> -->
+        <div class="container py-lg-4">
+
+
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+
+            {% for a in a %}
+            <div class="col my-3">
+                    <div class="card">
+                    
+                        <img src="/media/{{a.image}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{a.title}}</h5>
+                            <!-- <p class="card-text htotext">{{a.content | truncatechars:80 }}</p> -->
+                        </div>
+
+                        <a href="/news/{{a.slug}}" class="btn btn-style btn-primary my-2 mx-2 ">Read full story</a>
+
+                    </div>
+                </div>
+            {% endfor %}
+                
+            </div>
+
+
+        </div>
+    <!-- </div> -->
+</section>
+
+
+{% endblock body %}
